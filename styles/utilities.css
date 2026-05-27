@@ -1,0 +1,25 @@
+.section {
+  padding: 100px 0;
+}
+
+.text-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #0057FF 0%,
+      #00A3FF 100%
+    );
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

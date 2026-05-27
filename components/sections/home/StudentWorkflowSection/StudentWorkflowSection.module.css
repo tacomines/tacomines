@@ -1,0 +1,215 @@
+.section {
+  position: relative;
+
+  padding:
+    110px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #041B3D 0%,
+      #05152D 100%
+    );
+}
+
+.header {
+  text-align: center;
+
+  max-width: 850px;
+
+  margin:
+    0 auto 80px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    12px 22px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(38px, 5vw, 58px);
+
+  font-weight: 800;
+  line-height: 1.15;
+
+  color: #ffffff;
+
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.75);
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 42px;
+
+  max-width: 980px;
+
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+
+  gap: 30px;
+}
+
+.iconWrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0057FF 0%,
+      #00A3FF 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(0,87,255,0.25);
+}
+
+.line {
+  position: absolute;
+
+  top: 78px;
+
+  width: 3px;
+  height: calc(100% + 38px);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,163,255,0.5),
+      rgba(255,255,255,0.05)
+    );
+}
+
+.content {
+  padding-top: 6px;
+}
+
+.content h3 {
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #ffffff;
+
+  margin-bottom: 12px;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  color:
+    rgba(255,255,255,0.75);
+
+  max-width: 720px;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .section {
+    padding:
+      90px 0;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .step {
+    gap: 20px;
+  }
+
+  .icon {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 18px;
+  }
+
+  .line {
+    top: 68px;
+  }
+
+  .content h3 {
+    font-size: 22px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+  .section {
+    padding:
+      80px 0;
+  }
+
+  .step {
+    align-items: flex-start;
+  }
+
+  .content h3 {
+    font-size: 20px;
+  }
+}

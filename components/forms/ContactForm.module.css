@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(0,0,0,0.08);
+
+  font-size: 16px;
+}
+
+.field p {
+  color: red;
+
+  font-size: 14px;
+}
+
+.form button {
+  height: 54px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0057FF 0%,
+      #00A3FF 100%
+    );
+
+  color: #ffffff;
+
+  font-weight: 600;
+}

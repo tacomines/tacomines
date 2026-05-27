@@ -1,0 +1,36 @@
+.dropdownMenu {
+  position: absolute;
+  top: 42px;
+  left: 0;
+
+  min-width: 220px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.3s ease;
+}
+
+.dropdownItem {
+  display: block;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+.dropdownItem:hover {
+  background:
+    rgba(0, 87, 255, 0.08);
+}
