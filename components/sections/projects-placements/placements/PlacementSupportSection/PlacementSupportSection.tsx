@@ -34,7 +34,10 @@ const support = [
 
 export default function PlacementSupportSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='guidance'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <SectionHeading

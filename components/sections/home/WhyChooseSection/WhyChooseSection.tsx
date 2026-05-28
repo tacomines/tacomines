@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 
 import styles from './WhyChooseSection.module.css';
+import SectionHeading from '@/components/shared/SectionHeading/SectionHeading';
 
 const features = [
   {
@@ -50,26 +51,29 @@ const features = [
 
 const WhyChooseSection = () => {
   return (
-    <section className={styles.section}>
+      <section
+        id='why'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
-        <div className={styles.heading}>
-          <span className={styles.badge}>
-            Why TacoMines
-          </span>
+      <div className={styles.heading}>
+        <span className={styles.badge}>
+          Why TacoMines
+        </span>
 
-          <h2>
-            Why Students Choose
-            {' '}
-            <span>TacoMines</span>
-          </h2>
+        <h2>
+          Why Students Choose
+          {' '}
+          <span>TacoMines</span>
+        </h2>
 
-          <p>
-            Industry-oriented AI-assisted
-            engineering training designed
-            for practical skill development
-            and career growth.
-          </p>
-        </div>
+        <p>
+          Industry-oriented AI-assisted
+          engineering training designed
+          for practical skill development
+          and career growth.
+        </p>
+      </div>
 
         <div className={styles.grid}>
           {features.map((item) => (

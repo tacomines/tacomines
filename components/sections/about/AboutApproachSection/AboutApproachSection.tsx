@@ -41,7 +41,7 @@ export default function AboutApproachSection() {
   return (
       <section
         id='approach'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
         <div className={styles.header}>

@@ -54,7 +54,10 @@ const cards = [
 
 export default function CareerSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='career'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
         <div className={styles.header}>
           <span className={styles.badge}>

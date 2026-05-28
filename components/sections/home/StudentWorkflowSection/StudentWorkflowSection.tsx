@@ -63,7 +63,10 @@ const workflow = [
 
 export default function StudentWorkflowSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='workflow'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <div className={styles.header}>

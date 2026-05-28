@@ -90,7 +90,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+      <html
+        lang='en'
+        data-scroll-behavior='smooth'
+      >
       <body className={inter.className}>
         <ThemeProvider>
           <ModalProvider>
@@ -98,11 +101,7 @@ export default function RootLayout({
 
               <Navbar />
 
-              <main
-                style={{
-                  paddingTop: '78px',
-                }}
-              >
+              <main className='layoutMain'>
                 {children}
               </main>
 

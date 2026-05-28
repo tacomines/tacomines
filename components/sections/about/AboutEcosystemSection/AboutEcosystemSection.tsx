@@ -41,7 +41,7 @@ export default function AboutEcosystemSection() {
   return (
       <section
         id='ecosystem'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
         <div className={styles.header}>

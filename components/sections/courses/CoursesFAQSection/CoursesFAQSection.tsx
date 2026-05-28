@@ -75,7 +75,7 @@ export default function CoursesFAQSection() {
   return (
       <section
         id='faq'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

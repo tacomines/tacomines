@@ -105,6 +105,11 @@ export default function ClassesWorkshopsPage() {
             id: 'faq',
             label: 'FAQ',
           },
+
+         {
+            id: 'cta',
+            label: 'Get Started',
+          },
         ]}
       />
 

@@ -31,14 +31,14 @@ export const metadata =
 export default function BlogPage() {
   return (
     <>
-      <PageBanner
-        badge='TacoMines Blog'
-        title='Engineering'
-        highlight='Insights & Learning'
-        description='Explore practical engineering insights, AI-assisted workflows, modern development systems, productivity techniques and implementation-oriented technical learning.'
-        image='/images/banners/blog.webp'
-        imageAlt='TacoMines Blog Banner'
-      />
+    <PageBanner
+      badge='TacoMines Blog'
+      title='Engineering'
+      highlight='Insights & Learning'
+      description='Explore practical engineering insights, AI-assisted workflows, modern development systems, productivity techniques and implementation-oriented technical learning.'
+      image='/images/banners/blog.webp'
+      imageAlt='TacoMines Blog Banner'
+    />
 
       <SectionNavigator
         sections={[

@@ -1,8 +1,6 @@
 .section {
   position: relative;
 
-  padding: 90px 0;
-
   background:
     linear-gradient(
       180deg,
@@ -155,10 +153,6 @@
 /* MOBILE */
 
 @media (max-width: 768px) {
-  .section {
-    padding: 70px 0;
-  }
-
   .heading h2 {
     font-size: 38px;
   }

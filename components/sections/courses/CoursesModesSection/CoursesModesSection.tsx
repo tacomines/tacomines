@@ -43,7 +43,7 @@ export default function CoursesModesSection() {
   return (
       <section
         id='modes'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

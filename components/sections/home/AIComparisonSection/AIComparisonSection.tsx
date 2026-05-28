@@ -25,7 +25,10 @@ const aiTraining = [
 
 const AIComparisonSection = () => {
   return (
-    <section className={styles.section}>
+      <section
+        id='comparison'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
         <div className={styles.heading}>
           <span className={styles.badge}>

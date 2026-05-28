@@ -57,7 +57,10 @@ const categories = [
 
 export default function ProjectsCategoriesSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='projects'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <SectionHeading

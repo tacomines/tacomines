@@ -57,7 +57,10 @@ const topics = [
 
 export default function WorkshopsTopicsSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='topics'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <SectionHeading

@@ -1,5 +1,7 @@
 import { generateMetadata } from '@/lib/metadata';
 
+import SectionNavigator from '@/components/shared/SectionNavigator/SectionNavigator';
+
 import HomeSplitHero from '@/components/sections/home/HomeSplitHero/HomeSplitHero';
 
 import WhyChooseSection from '@/components/sections/home/WhyChooseSection/WhyChooseSection';
@@ -41,6 +43,45 @@ export default function HomePage() {
   return (
     <>
       <HomeSplitHero />
+
+      <SectionNavigator
+      sections={[
+        {
+          id: 'why',
+          label: 'Why TacoMines',
+        },
+
+        {
+          id: 'comparison',
+          label: 'AI Learning',
+        },
+
+        {
+          id: 'courses',
+          label: 'Courses',
+        },
+
+        {
+          id: 'workflow',
+          label: 'Workflow',
+        },
+
+        {
+          id: 'projects',
+          label: 'Projects',
+        },
+
+        {
+          id: 'career',
+          label: 'Career',
+        },
+
+        {
+          id: 'cta',
+          label: 'Get Started',
+        },
+      ]}
+    />
 
       <WhyChooseSection />
 

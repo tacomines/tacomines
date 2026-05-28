@@ -1,8 +1,10 @@
 import { generateMetadata } from '@/lib/metadata';
 
-import WorkshopsHeroSection from '@/components/sections/classes-workshops/workshops/WorkshopsHeroSection/WorkshopsHeroSection';
+import PageBanner from '@/components/shared/PageBanner/PageBanner';
 
-import WorkshopsTopicsSection from '@/components/sections/classes-workshops/workshops/WorkshopsTopicsSection/WorkshopsTopicsSection';
+import SectionNavigator from '@/components/shared/SectionNavigator/SectionNavigator';
+
+import WorkshopsFeaturesSection from '@/components/sections/classes-workshops/workshops/WorkshopsTopicsSection/WorkshopsTopicsSection';
 
 import WorkshopsCTASection from '@/components/sections/classes-workshops/workshops/WorkshopsCTASection/WorkshopsCTASection';
 
@@ -11,13 +13,13 @@ export const metadata =
     title: 'Workshops',
 
     description:
-      'Explore TacoMines technical workshops focused on modern engineering technologies, AI-assisted workflows and practical implementation learning.',
+      'Explore TacoMines engineering workshops focused on implementation-oriented learning, AI-assisted workflows and practical technical productivity.',
 
     keywords: [
-      'Technical Workshops',
       'Engineering Workshops',
       'AI Workshops',
-      'Web Development Workshops',
+      'Technical Workshops',
+      'Implementation Training',
       'TacoMines Workshops',
     ],
   });
@@ -25,9 +27,30 @@ export const metadata =
 export default function WorkshopsPage() {
   return (
     <>
-      <WorkshopsHeroSection />
+      <PageBanner
+        badge='Implementation-Oriented Workshops'
+        title='Hands-On'
+        highlight='Technical Workshops'
+        description='Participate in implementation-focused engineering workshops designed to improve technical confidence, productivity and practical workflow understanding.'
+        image='/images/banners/workshops.webp'
+        imageAlt='Workshops Banner'
+      />
 
-      <WorkshopsTopicsSection />
+      <SectionNavigator
+        sections={[
+          {
+            id: 'topics',
+            label: 'Topics',
+          },
+
+          {
+            id: 'cta',
+            label: 'Get Started',
+          },
+        ]}
+      />
+
+      <WorkshopsFeaturesSection />
 
       <WorkshopsCTASection />
     </>

@@ -41,7 +41,10 @@ const preparation = [
 
 export default function CareerPreparationSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='opportunities'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <SectionHeading

@@ -55,7 +55,10 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='courses'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <div className={styles.header}>

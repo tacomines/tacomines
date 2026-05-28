@@ -41,7 +41,10 @@ const features = [
 
 export default function OfflineClassesFeaturesSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='features'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
 
         <SectionHeading

@@ -1,6 +1,8 @@
 import { generateMetadata } from '@/lib/metadata';
 
-import StudentProjectsHeroSection from '@/components/sections/projects-placements/student-projects/StudentProjectsHeroSection/StudentProjectsHeroSection';
+import PageBanner from '@/components/shared/PageBanner/PageBanner';
+
+import SectionNavigator from '@/components/shared/SectionNavigator/SectionNavigator';
 
 import ProjectsCategoriesSection from '@/components/sections/projects-placements/student-projects/ProjectsCategoriesSection/ProjectsCategoriesSection';
 
@@ -27,7 +29,33 @@ export const metadata =
 export default function StudentProjectsPage() {
   return (
     <>
-      <StudentProjectsHeroSection />
+      <PageBanner
+        badge='Implementation-Oriented Learning'
+        title='Real-World'
+        highlight='Student Projects'
+        description='Build practical engineering projects focused on implementation workflows, technical confidence and portfolio-oriented learning experiences.'
+        image='/images/banners/student-projects.webp'
+        imageAlt='Student Projects Banner'
+      />
+
+      <SectionNavigator
+        sections={[
+          {
+            id: 'projects',
+            label: 'Projects',
+          },
+
+          {
+            id: 'workflow',
+            label: 'Workflow',
+          },
+
+          {
+            id: 'cta',
+            label: 'Get Started',
+          },
+        ]}
+      />
 
       <ProjectsCategoriesSection />
 

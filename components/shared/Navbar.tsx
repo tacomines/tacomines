@@ -160,6 +160,7 @@ const Navbar = () => {
                 if (item.dropdown) {
 
                   const isParentActive =
+                    pathname === item.href ||
                     item.items?.some(
                       (subItem) =>
                         pathname ===

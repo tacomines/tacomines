@@ -4,7 +4,7 @@ export default function AboutVisionSection() {
   return (
       <section
         id='vision'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
         <div className={styles.wrapper}>

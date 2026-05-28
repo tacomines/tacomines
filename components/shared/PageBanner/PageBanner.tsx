@@ -80,6 +80,7 @@ export default function PageBanner({
               alt={imageAlt}
               fill
               priority
+              sizes='(max-width: 768px) 100vw, 50vw'
               className={styles.image}
             />
 

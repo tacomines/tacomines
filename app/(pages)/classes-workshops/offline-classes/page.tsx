@@ -1,6 +1,8 @@
 import { generateMetadata } from '@/lib/metadata';
 
-import OfflineClassesHeroSection from '@/components/sections/classes-workshops/offline-classes/OfflineClassesHeroSection/OfflineClassesHeroSection';
+import PageBanner from '@/components/shared/PageBanner/PageBanner';
+
+import SectionNavigator from '@/components/shared/SectionNavigator/SectionNavigator';
 
 import OfflineClassesFeaturesSection from '@/components/sections/classes-workshops/offline-classes/OfflineClassesFeaturesSection/OfflineClassesFeaturesSection';
 
@@ -11,13 +13,13 @@ export const metadata =
     title: 'Offline Classes',
 
     description:
-      'Explore TacoMines classroom-based engineering learning programs focused on practical implementation, mentorship and technical growth.',
+      'Explore TacoMines classroom-based engineering training programs focused on practical implementation, mentorship and AI-assisted learning workflows.',
 
     keywords: [
       'Offline Engineering Classes',
-      'Classroom Training',
-      'Practical Technical Learning',
-      'Engineering Workshops',
+      'Classroom Technical Training',
+      'Practical Engineering Learning',
+      'AI-Assisted Engineering',
       'TacoMines Offline Classes',
     ],
   });
@@ -25,7 +27,28 @@ export const metadata =
 export default function OfflineClassesPage() {
   return (
     <>
-      <OfflineClassesHeroSection />
+      <PageBanner
+        badge='Classroom Engineering Training'
+        title='Structured'
+        highlight='Offline Classes'
+        description='Experience implementation-oriented classroom learning with practical engineering guidance, collaborative environments and mentorship-focused workflows.'
+        image='/images/banners/offline-classes.webp'
+        imageAlt='Offline Classes Banner'
+      />
+
+      <SectionNavigator
+        sections={[
+          {
+            id: 'features',
+            label: 'Features',
+          },
+
+          {
+            id: 'cta',
+            label: 'Get Started',
+          },
+        ]}
+      />
 
       <OfflineClassesFeaturesSection />
 

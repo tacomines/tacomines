@@ -9,7 +9,10 @@ import styles from './CTASection.module.css';
 
 export default function CTASection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='cta'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
         <div className={styles.card}>
 

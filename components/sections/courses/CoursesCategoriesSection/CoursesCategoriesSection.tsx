@@ -77,7 +77,7 @@ export default function CoursesCategoriesSection() {
   return (
       <section
         id='categories'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
         <SectionHeading

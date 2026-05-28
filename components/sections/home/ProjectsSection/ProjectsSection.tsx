@@ -45,7 +45,10 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='projects'
+        className={`sectionSpacing ${styles.section}`}
+      >
       <div className='container'>
         <div className={styles.header}>
           <span className={styles.badge}>
@@ -75,6 +78,7 @@ export default function ProjectsSection() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                   className={styles.image}
                 />
               </div>
