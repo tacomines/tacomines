@@ -9,7 +9,10 @@ import styles from './AboutCTASection.module.css';
 
 export default function AboutCTASection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='cta'
+        className={styles.section}
+      >
       <div className='container'>
         <div className={styles.card}>
           <span className={styles.badge}>

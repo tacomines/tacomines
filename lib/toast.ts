@@ -17,3 +17,9 @@ export const showInfoToast = (
 ) => {
   toast(message);
 };
+
+export const showWarningToast = (
+  message: string
+) => {
+  toast.warning(message);
+};

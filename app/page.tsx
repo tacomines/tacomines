@@ -1,4 +1,6 @@
-import HeroSection from '@/components/sections/home/HeroSection/HeroSection';
+import { generateMetadata } from '@/lib/metadata';
+
+import HomeSplitHero from '@/components/sections/home/HomeSplitHero/HomeSplitHero';
 
 import WhyChooseSection from '@/components/sections/home/WhyChooseSection/WhyChooseSection';
 
@@ -14,10 +16,31 @@ import CareerSection from '@/components/sections/home/CareerSection/CareerSectio
 
 import CTASection from '@/components/sections/home/CTASection/CTASection';
 
+export const metadata =
+  generateMetadata({
+    title: 'Home',
+
+    description:
+      'TacoMines is an AI-assisted engineering academy focused on practical software development, AI tools, web applications, automation and career-oriented technical learning.',
+
+    keywords: [
+      'TacoMines',
+      'AI Engineering Academy',
+      'Web Development Training',
+      'AI Assisted Learning',
+      'Software Development',
+      'Progressive Web Apps',
+      'Hybrid Apps',
+      'Engineering Training',
+      'Career-Oriented Learning',
+      'Modern Engineering Skills',
+    ],
+  });
+
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
+      <HomeSplitHero />
 
       <WhyChooseSection />
 

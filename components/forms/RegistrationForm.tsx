@@ -6,6 +6,8 @@ import { z } from 'zod';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import CTAButton from '@/components/shared/CTAButton/CTAButton';
+
 import styles from './RegistrationForm.module.css';
 
 import {
@@ -14,16 +16,29 @@ import {
 } from '@/lib/toast';
 
 const schema = z.object({
-  fullName: z.string().min(2),
+  fullName: z
+    .string()
+    .min(2, 'Full name is required'),
 
-  email: z.string().email(),
+  email: z
+    .string()
+    .email('Enter valid email'),
 
-  phone: z.string().min(10),
+  phone: z
+    .string()
+    .min(
+      10,
+      'Enter valid phone number'
+    ),
 
-  course: z.string().min(2),
+  course: z
+    .string()
+    .min(2, 'Course is required'),
 });
 
-type FormData = z.infer<typeof schema>;
+type FormData = z.infer<
+  typeof schema
+>;
 
 const RegistrationForm = () => {
   const {
@@ -33,9 +48,13 @@ const RegistrationForm = () => {
 
     reset,
 
-    formState: { errors, isSubmitting },
+    formState: {
+      errors,
+      isSubmitting,
+    },
   } = useForm<FormData>({
-    resolver: zodResolver(schema),
+    resolver:
+      zodResolver(schema),
   });
 
   const onSubmit = async (
@@ -61,6 +80,8 @@ const RegistrationForm = () => {
       onSubmit={handleSubmit(onSubmit)}
       className={styles.form}
     >
+      {/* FULL NAME */}
+
       <div className={styles.field}>
         <input
           type='text'
@@ -69,11 +90,16 @@ const RegistrationForm = () => {
         />
 
         {errors.fullName && (
-          <p>
-            {errors.fullName.message}
+          <p className={styles.error}>
+            {
+              errors.fullName
+                .message
+            }
           </p>
         )}
       </div>
+
+      {/* EMAIL */}
 
       <div className={styles.field}>
         <input
@@ -83,9 +109,16 @@ const RegistrationForm = () => {
         />
 
         {errors.email && (
-          <p>{errors.email.message}</p>
+          <p className={styles.error}>
+            {
+              errors.email
+                .message
+            }
+          </p>
         )}
       </div>
+
+      {/* PHONE */}
 
       <div className={styles.field}>
         <input
@@ -95,9 +128,16 @@ const RegistrationForm = () => {
         />
 
         {errors.phone && (
-          <p>{errors.phone.message}</p>
+          <p className={styles.error}>
+            {
+              errors.phone
+                .message
+            }
+          </p>
         )}
       </div>
+
+      {/* COURSE */}
 
       <div className={styles.field}>
         <input
@@ -107,18 +147,24 @@ const RegistrationForm = () => {
         />
 
         {errors.course && (
-          <p>{errors.course.message}</p>
+          <p className={styles.error}>
+            {
+              errors.course
+                .message
+            }
+          </p>
         )}
       </div>
 
-      <button
+      <CTAButton
+        label={
+          isSubmitting
+            ? 'Submitting...'
+            : 'Register Now'
+        }
         type='submit'
-        disabled={isSubmitting}
-      >
-        {isSubmitting
-          ? 'Submitting...'
-          : 'Register Now'}
-      </button>
+        fullWidth
+      />
     </form>
   );
 };

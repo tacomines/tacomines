@@ -1,0 +1,61 @@
+.button {
+  height: 56px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    0 28px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.button:hover {
+  transform:
+    translateY(-3px);
+}
+
+.primary {
+  background:
+    linear-gradient(
+      135deg,
+      #0057FF 0%,
+      #00A3FF 100%
+    );
+
+  color: #ffffff;
+}
+
+.secondary {
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.12);
+
+  color: #ffffff;
+}
+
+.secondary:hover {
+  background:
+    rgba(255,255,255,0.14);
+
+  border:
+    1px solid rgba(255,255,255,0.18);
+}
+
+.fullWidth {
+  width: 100%;
+}

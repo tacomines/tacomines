@@ -2,7 +2,10 @@ import styles from './AboutVisionSection.module.css';
 
 export default function AboutVisionSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='vision'
+        className={styles.section}
+      >
       <div className='container'>
         <div className={styles.wrapper}>
           <div className={styles.left}>

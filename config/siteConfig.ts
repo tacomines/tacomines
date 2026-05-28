@@ -1,16 +1,26 @@
 export const SITE_CONFIG = {
-  siteName: 'TacoMines',
-  siteUrl: 'https://tacomines.com',
-
-  title: 'AI-Powered Product Engineering Academy',
+  name: 'TacoMines',
 
   description:
-    'Learn software development, AI engineering, IoT systems and product development through practical industry-oriented training.',
+    'AI-assisted engineering learning and implementation-focused technical growth.',
 
-  tagline: 'AI Solutions | Marketing | Automation',
+  url:
+    'https://www.tacomines.com',
 
-  email: 'contact@tacomines.com',
-  phone: '+91-0000000000',
+  email:
+    'info@tacomines.com',
 
-  address: 'India',
+  phone:
+    '+91 90637 25514',
+
+  location:
+    'India',
+
+  socialLinks: {
+    linkedin: '#',
+
+    instagram: '#',
+
+    github: '#',
+  },
 };

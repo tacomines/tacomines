@@ -32,6 +32,8 @@ export const NAVIGATION_LINKS: NavigationItem[] = [
   {
     label: 'Classes & Workshops',
 
+    href: '/classes-workshops',
+
     dropdown: true,
 
     items: [
@@ -54,6 +56,8 @@ export const NAVIGATION_LINKS: NavigationItem[] = [
 
   {
     label: 'Projects & Placements',
+
+    href: '/projects-placements',
 
     dropdown: true,
 

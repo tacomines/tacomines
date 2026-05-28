@@ -39,7 +39,10 @@ const items = [
 
 export default function AboutApproachSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='approach'
+        className={styles.section}
+      >
       <div className='container'>
         <div className={styles.header}>
           <span className={styles.badge}>

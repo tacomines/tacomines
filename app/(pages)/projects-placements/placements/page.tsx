@@ -1,14 +1,39 @@
+import { generateMetadata } from '@/lib/metadata';
+
+import PlacementsHeroSection from '@/components/sections/projects-placements/placements/PlacementsHeroSection/PlacementsHeroSection';
+
+import PlacementSupportSection from '@/components/sections/projects-placements/placements/PlacementSupportSection/PlacementSupportSection';
+
+import CareerPreparationSection from '@/components/sections/projects-placements/placements/CareerPreparationSection/CareerPreparationSection';
+
+import PlacementsCTASection from '@/components/sections/projects-placements/placements/PlacementsCTASection/PlacementsCTASection';
+
+export const metadata =
+  generateMetadata({
+    title: 'Placements',
+
+    description:
+      'Explore TacoMines placement readiness support, engineering mentorship and implementation-focused career preparation workflows.',
+
+    keywords: [
+      'Placement Support',
+      'Engineering Career',
+      'Technical Portfolio',
+      'Resume Guidance',
+      'Career Preparation',
+    ],
+  });
+
 export default function PlacementsPage() {
   return (
-    <section className='page-placeholder'>
-      <div className='container'>
-        <h1>Placements</h1>
+    <>
+      <PlacementsHeroSection />
 
-        <p>
-          Placement guidance and career support
-          details will be updated soon.
-        </p>
-      </div>
-    </section>
+      <PlacementSupportSection />
+
+      <CareerPreparationSection />
+
+      <PlacementsCTASection />
+    </>
   );
 }

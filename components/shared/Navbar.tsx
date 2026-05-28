@@ -1,8 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import Link from 'next/link';
+
 import Image from 'next/image';
 
 import {
@@ -10,6 +15,8 @@ import {
   X,
   ChevronDown,
 } from 'lucide-react';
+
+import { usePathname } from 'next/navigation';
 
 import styles from './Navbar.module.css';
 
@@ -20,11 +27,16 @@ import { NAVIGATION_LINKS } from '@/config/navigationConfig';
 import ScrollToTopLink from './ScrollToTopLink';
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] =
     useState(false);
 
   const [scrolled, setScrolled] =
     useState(false);
+
+  const navRef =
+    useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,18 +55,62 @@ const Navbar = () => {
       );
   }, []);
 
+  /* OUTSIDE CLICK CLOSE */
+
+  useEffect(() => {
+    const handleClickOutside = (
+      event: MouseEvent
+    ) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(
+          event.target as Node
+        )
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener(
+      'mousedown',
+      handleClickOutside
+    );
+
+    return () => {
+      document.removeEventListener(
+        'mousedown',
+        handleClickOutside
+      );
+    };
+  }, []);
+
+  /* CLOSE ON ROUTE CHANGE */
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   return (
     <header
       className={`${styles.header} ${
-        scrolled ? styles.scrolled : ''
+        scrolled
+          ? styles.scrolled
+          : ''
       }`}
     >
       <Container>
-        <div className={styles.wrapper}>
+        <div
+          className={styles.wrapper}
+          ref={navRef}
+        >
+
           {/* LOGO */}
+
           <ScrollToTopLink
             href='/'
-            className={styles.logoWrapper}
+            className={
+              styles.logoWrapper
+            }
             onClick={() =>
               setIsOpen(false)
             }
@@ -70,11 +126,15 @@ const Navbar = () => {
           </ScrollToTopLink>
 
           {/* MOBILE BUTTON */}
+
           <button
-            className={styles.mobileButton}
+            className={
+              styles.mobileButton
+            }
             onClick={() =>
               setIsOpen(!isOpen)
             }
+            aria-label='Toggle Menu'
           >
             {isOpen ? (
               <X size={28} />
@@ -84,80 +144,130 @@ const Navbar = () => {
           </button>
 
           {/* NAVIGATION */}
+
           <nav
             className={`${styles.navMenu} ${
-              isOpen ? styles.open : ''
+              isOpen
+                ? styles.open
+                : ''
             }`}
           >
-            {NAVIGATION_LINKS.map((item) => {
-              if (item.dropdown) {
+            {NAVIGATION_LINKS.map(
+              (item) => {
+
+                /* DROPDOWN */
+
+                if (item.dropdown) {
+
+                  const isParentActive =
+                    item.items?.some(
+                      (subItem) =>
+                        pathname ===
+                        subItem.href
+                    );
+
+                  return (
+                    <div
+                      key={item.label}
+                      className={
+                        styles.dropdown
+                      }
+                    >
+
+                      {/* PARENT */}
+
+                      <div
+                        className={
+                          styles.dropdownTrigger
+                        }
+                      >
+                        <ScrollToTopLink
+                          href={
+                            item.href ||
+                            '/'
+                          }
+                          className={`${
+                            styles.dropdownParentLink
+                          } ${
+                            isParentActive
+                              ? styles.activeLink
+                              : ''
+                          }`}
+                        >
+                          {item.label}
+                        </ScrollToTopLink>
+
+                        <ChevronDown
+                          size={16}
+                          className={
+                            styles.chevron
+                          }
+                        />
+                      </div>
+
+                      {/* MENU */}
+
+                      <div
+                        className={
+                          styles.dropdownMenu
+                        }
+                      >
+                        {item.items?.map(
+                          (
+                            subItem
+                          ) => (
+                            <Link
+                              key={
+                                subItem.label
+                              }
+                              href={
+                                subItem.href
+                              }
+                              className={`${
+                                styles.dropdownItem
+                              } ${
+                                pathname ===
+                                subItem.href
+                                  ? styles.activeDropdownItem
+                                  : ''
+                              }`}
+                            >
+                              {
+                                subItem.label
+                              }
+                            </Link>
+                          )
+                        )}
+                      </div>
+
+                    </div>
+                  );
+                }
+
+                /* NORMAL LINK */
+
                 return (
-                  <div
+                  <ScrollToTopLink
                     key={item.label}
-                    className={
-                      styles.dropdown
+                    href={
+                      item.href || '/'
                     }
+                    className={`${
+                      styles.navLink
+                    } ${
+                      pathname ===
+                      item.href
+                        ? styles.activeLink
+                        : ''
+                    }`}
                   >
-                    <div
-                      className={
-                        styles.dropdownTrigger
-                      }
-                    >
-                      <span>
-                        {item.label}
-                      </span>
-
-                      <ChevronDown
-                        size={16}
-                      />
-                    </div>
-
-                    <div
-                      className={
-                        styles.dropdownMenu
-                      }
-                    >
-                      {item.items?.map(
-                        (subItem) => (
-                          <Link
-                            key={
-                              subItem.label
-                            }
-                            href={
-                              subItem.href
-                            }
-                            className={
-                              styles.dropdownItem
-                            }
-                            onClick={() =>
-                              setIsOpen(
-                                false
-                              )
-                            }
-                          >
-                            {subItem.label}
-                          </Link>
-                        )
-                      )}
-                    </div>
-                  </div>
+                    {item.label}
+                  </ScrollToTopLink>
                 );
               }
-
-              return (
-                <ScrollToTopLink
-                  key={item.label}
-                  href={item.href || '/'}
-                  className={styles.navLink}
-                  onClick={() =>
-                    setIsOpen(false)
-                  }
-                >
-                  {item.label}
-                </ScrollToTopLink>
-              );
-            })}
+            )}
           </nav>
+
         </div>
       </Container>
     </header>

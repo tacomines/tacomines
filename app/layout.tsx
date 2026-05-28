@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
@@ -14,56 +15,71 @@ import '@/styles/globals.css';
 import '@/styles/animations.css';
 import '@/styles/utilities.css';
 
+const inter = Inter({
+  subsets: ['latin'],
+
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tacomines.com'),
+  metadataBase: new URL(
+    'https://www.tacomines.com'
+  ),
 
   title: {
-    default: 'TacoMines',
-    template: '%s | TacoMines',
+    default:
+      'TacoMines',
+
+    template:
+      '%s | TacoMines',
   },
 
   description:
-    'AI-assisted engineering academy focused on software development, AI tools, web applications, automation, cloud technologies and career-oriented practical training.',
+    'TacoMines provides AI-assisted engineering learning, practical implementation workflows, modern web development training and productivity-oriented technical growth.',
 
   keywords: [
     'TacoMines',
-    'AI Training',
-    'Web Development Training',
-    'PWA Development',
-    'Software Training Institute',
-    'AI Assisted Learning',
-    'Next.js Training',
-    'React Training',
-    'Cloud Hosting',
-    'Career Guidance',
-    'Engineering Academy',
+    'Web Development',
+    'AI Engineering',
+    'Progressive Web Apps',
+    'Hybrid Apps',
+    'Technical Training',
+    'Engineering Learning',
   ],
 
   openGraph: {
-    title: 'TacoMines',
+    title:
+      'TacoMines',
+
     description:
-      'AI-assisted engineering academy focused on practical skill development and career-oriented learning.',
+      'AI-assisted engineering learning and implementation-focused technical growth.',
 
-    url: 'https://tacomines.com',
+    url:
+      'https://www.tacomines.com',
 
-    siteName: 'TacoMines',
+    siteName:
+      'TacoMines',
 
-    locale: 'en_US',
+    locale:
+      'en_US',
 
     type: 'website',
   },
 
   twitter: {
-    card: 'summary_large_image',
+    card:
+      'summary_large_image',
 
-    title: 'TacoMines',
+    title:
+      'TacoMines',
 
     description:
-      'AI-assisted engineering academy focused on practical implementation and career-oriented learning.',
+      'AI-assisted engineering learning and practical technical growth.',
   },
 
   robots: {
     index: true,
+
     follow: true,
   },
 };
@@ -75,7 +91,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider>
           <ModalProvider>
             <RegistrationProvider>
@@ -97,6 +113,9 @@ export default function RootLayout({
               <Toaster
                 richColors
                 position='top-right'
+                expand
+                closeButton
+                duration={3500}
               />
 
             </RegistrationProvider>

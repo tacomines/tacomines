@@ -49,3 +49,12 @@
 
   font-weight: 600;
 }
+
+.error {
+  margin-top: 8px;
+
+  color: #ff3b30;
+
+  font-size: 13px;
+  font-weight: 500;
+}

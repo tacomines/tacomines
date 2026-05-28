@@ -1,0 +1,22 @@
+{
+  "name": "TacoMines",
+  "short_name": "TacoMines",
+  "description": "AI-assisted engineering academy focused on practical implementation and career-oriented learning.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#031633",
+  "theme_color": "#0057FF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/favicon.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

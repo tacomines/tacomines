@@ -1,18 +1,57 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
-interface GenerateMetadataProps {
+interface MetadataProps {
   title: string;
 
   description: string;
+
+  keywords?: string[];
 }
 
-export const generateMetadata = ({
+export function generateMetadata({
   title,
   description,
-}: GenerateMetadataProps): Metadata => {
+  keywords = [],
+}: MetadataProps): Metadata {
+
+  const fullTitle =
+    `${title} | TacoMines`;
+
   return {
-    title,
+    title: fullTitle,
 
     description,
+
+    keywords,
+
+    openGraph: {
+      title: fullTitle,
+
+      description,
+
+      url:
+        'https://tacomines.com',
+
+      siteName:
+        'TacoMines',
+
+      locale: 'en_US',
+
+      type: 'website',
+    },
+
+    twitter: {
+      card:
+        'summary_large_image',
+
+      title: fullTitle,
+
+      description,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
-};
+}

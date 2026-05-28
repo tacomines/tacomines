@@ -1,25 +1,49 @@
-import type { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://tacomines.com',
-      lastModified: new Date(),
-    },
+  const baseUrl =
+    'https://www.tacomines.com';
 
-    {
-      url: 'https://tacomines.com/about',
-      lastModified: new Date(),
-    },
+  const routes = [
+    '',
 
-    {
-      url: 'https://tacomines.com/courses',
-      lastModified: new Date(),
-    },
+    '/about',
 
-    {
-      url: 'https://tacomines.com/contact',
-      lastModified: new Date(),
-    },
+    '/courses',
+
+    '/classes-workshops',
+
+    '/classes-workshops/online-classes',
+
+    '/classes-workshops/offline-classes',
+
+    '/classes-workshops/workshops',
+
+    '/projects-placements',
+
+    '/projects-placements/student-projects',
+
+    '/projects-placements/placements',
+
+    '/register',
+
+    '/contact',
+
+    '/blog',
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+
+    lastModified:
+      new Date(),
+
+    changeFrequency:
+      'weekly',
+
+    priority:
+      route === ''
+        ? 1
+        : 0.8,
+  }));
 }

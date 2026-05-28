@@ -39,7 +39,10 @@ const ecosystem = [
 
 export default function AboutEcosystemSection() {
   return (
-    <section className={styles.section}>
+      <section
+        id='ecosystem'
+        className={styles.section}
+      >
       <div className='container'>
         <div className={styles.header}>
           <span className={styles.badge}>
