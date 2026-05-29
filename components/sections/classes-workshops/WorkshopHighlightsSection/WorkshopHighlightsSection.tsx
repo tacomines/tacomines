@@ -43,7 +43,7 @@ export default function WorkshopHighlightsSection() {
   return (
       <section
         id='highlights'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

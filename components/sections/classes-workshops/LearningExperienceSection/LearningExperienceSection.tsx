@@ -41,11 +41,11 @@ const experience = [
 
 export default function LearningExperienceSection() {
   return (
-      <section
-        id='experience'
-        className={styles.section}
-      >
-      <div className='container'>
+        <section
+          id='experience'
+          className={`sectionSpacing ${styles.section}`}
+        >
+              <div className='container'>
 
         <SectionHeading
           badge='Learning Experience'

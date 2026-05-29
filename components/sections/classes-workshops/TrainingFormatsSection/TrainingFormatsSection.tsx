@@ -43,7 +43,7 @@ export default function TrainingFormatsSection() {
   return (
       <section
         id='formats'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

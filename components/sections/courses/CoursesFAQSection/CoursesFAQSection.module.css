@@ -83,12 +83,20 @@
     1px solid rgba(3,22,51,0.06);
 
   transition:
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .faqItem:hover {
+  transform:
+    translateY(-2px);
+
   box-shadow:
     0 14px 40px rgba(0,0,0,0.06);
+
+  border-color:
+    rgba(0,163,255,0.20);
 }
 
 .question {
@@ -144,8 +152,13 @@
     max-height 0.35s ease;
 }
 
-.active .answer {
-  max-height: 300px;
+.active {
+  border-color:
+    rgba(0,163,255,0.25);
+}
+
+.active .question span {
+  color: #0057FF;
 }
 
 .answer p {
@@ -160,10 +173,6 @@
 }
 
 @media (max-width: 576px) {
-  .section {
-    padding:
-      80px 0;
-  }
 
   .title {
     font-size: 34px;

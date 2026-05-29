@@ -14,7 +14,7 @@
   grid-template-columns:
     0.9fr 1.1fr;
 
-  gap: 60px;
+  gap: 50px;
 }
 
 .badge {
@@ -40,10 +40,12 @@
 }
 
 .title {
-  color: #ffffff;
+  font-size:
+    clamp(38px, 5vw, 52px);
+      color: #ffffff;
 
-  font-size: 52px;
   font-weight: 800;
+
   line-height: 1.15;
 }
 
@@ -56,6 +58,8 @@
   flex-direction: column;
 
   gap: 28px;
+
+  max-width: 720px;
 }
 
 .right p {
@@ -77,10 +81,6 @@
 }
 
 @media (max-width: 576px) {
-  .section {
-    padding:
-      80px 0;
-  }
 
   .title {
     font-size: 34px;
@@ -90,3 +90,4 @@
     font-size: 16px;
   }
 }
+
