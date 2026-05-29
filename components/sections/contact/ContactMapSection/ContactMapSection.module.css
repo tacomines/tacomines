@@ -1,6 +1,4 @@
 .section {
-  padding:
-    100px 0;
 
   background:
     linear-gradient(
@@ -115,8 +113,8 @@
 }
 
 .icon {
-  width: 58px;
-  height: 58px;
+  width: 64px;
+  height: 64px;
 
   display: flex;
   align-items: center;
@@ -202,10 +200,6 @@
 }
 
 @media (max-width: 576px) {
-  .section {
-    padding:
-      80px 0;
-  }
 
   .title {
     font-size: 34px;
@@ -218,4 +212,22 @@
   .overlayCard {
     padding: 24px;
   }
+}
+
+.mapCard {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.mapCard:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(0,163,255,0.20);
+
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.10);
 }

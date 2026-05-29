@@ -57,7 +57,7 @@ export default function RegisterFormSection() {
   return (
       <section
         id='register'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
         <div className={styles.wrapper}>

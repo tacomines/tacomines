@@ -32,7 +32,7 @@ export default function LatestInsightsSection() {
   return (
       <section
         id='insights'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

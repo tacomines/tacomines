@@ -13,7 +13,7 @@ export default function ContactMapSection() {
   return (
       <section
         id='map'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

@@ -1,6 +1,4 @@
 .section {
-  padding:
-    0 0 100px;
 
   background:
     #ffffff;
@@ -62,15 +60,19 @@
 
   cursor: pointer;
 
-  transition:
-    all 0.3s ease;
+transition:
+  background 0.3s ease,
+  color 0.3s ease,
+  transform 0.3s ease;
 }
 
 .tag:hover {
-  background:
-    #0057FF;
+  background: #0057FF;
 
   color: #ffffff;
+
+  transform:
+    translateY(-2px);
 }
 
 @media (max-width: 576px) {

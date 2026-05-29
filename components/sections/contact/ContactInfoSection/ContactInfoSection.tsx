@@ -54,7 +54,7 @@ export default function ContactInfoSection() {
   return (
       <section
         id='info'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
         <div className={styles.wrapper}>

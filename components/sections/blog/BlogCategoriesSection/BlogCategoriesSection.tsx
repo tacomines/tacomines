@@ -13,7 +13,7 @@ export default function BlogCategoriesSection() {
   return (
       <section
         id='categories'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

@@ -47,7 +47,7 @@ export default function FeaturedArticlesSection() {
   return (
       <section
         id='featured'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

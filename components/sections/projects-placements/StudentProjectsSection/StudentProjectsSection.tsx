@@ -43,7 +43,7 @@ export default function StudentProjectsSection() {
   return (
       <section
         id='projects'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 

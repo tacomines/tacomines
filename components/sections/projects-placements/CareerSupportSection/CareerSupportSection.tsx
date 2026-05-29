@@ -35,7 +35,7 @@ export default function CareerSupportSection() {
   return (
       <section
         id='support'
-        className={styles.section}
+        className={`sectionSpacing ${styles.section}`}
       >
       <div className='container'>
 
